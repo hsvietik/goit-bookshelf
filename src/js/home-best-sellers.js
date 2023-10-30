@@ -55,13 +55,16 @@ function createBooksList(books) {
     booksToRender = 5;
     bookTitleLength = 19;
   }
-
+  console.log(books);
   return books
     .slice(0, booksToRender)
     .map(({ _id, author, book_image, title }) => {
       title.length > bookTitleLength
         ? (title = title.slice(0, bookTitleLength - 3) + '...')
         : title;
+      author.length > bookTitleLength
+        ? (author = author.slice(0, bookTitleLength - 3) + '...')
+        : author;
       return `  <li class="home-books-item js-home-books-item" data-id=${_id}>
                 <img class="home-books-book-picture" src="${book_image}" alt="${title}" />
                 <p class="home-books-book-title">${title}</p>
