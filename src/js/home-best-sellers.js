@@ -55,7 +55,7 @@ function createBooksList(books) {
     booksToRender = 5;
     bookTitleLength = 19;
   }
-  console.log(books);
+
   return books
     .slice(0, booksToRender)
     .map(({ _id, author, book_image, title }) => {
